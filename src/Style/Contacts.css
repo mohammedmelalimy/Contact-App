@@ -1,3 +1,4 @@
+/* ===== Global ===== */
 *{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0;
@@ -39,13 +40,14 @@ h1{
   flex-direction: row;
   justify-content: space-evenly;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* CARD BOXES */
 .addContact,
 .searchContact{
-  width: 95%;
+  width: 45%;
   max-width: 500px;
   padding: 25px;
   border-radius: 20px;
@@ -59,7 +61,7 @@ h1{
 
 /* INPUT FIELDS */
 .form{
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -127,12 +129,14 @@ button{
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  flex-wrap: wrap;
 }
 
 .contact p{
   margin: 0;
   font-size: 1rem;
   color: #333;
+  flex: 1 1 60%;
 }
 
 .contact button{
@@ -142,9 +146,71 @@ button{
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
+  flex: 1 1 30%;
+  margin-top: 8px;
 }
 
 .contact button:hover{
   opacity: 0.9;
   transform: scale(1.05);
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Tablets */
+@media (max-width: 1024px){
+  h1{
+    width: 70%;
+    font-size: 1.8rem;
+  }
+  .app{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .addContact, .searchContact{
+    width: 90%;
+  }
+  button{
+    width: 50%;
+  }
+  .contact{
+    width: 90%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  h1{
+    width: 90%;
+    font-size: 1.5rem;
+    padding: 12px;
+  }
+  .addContact, .searchContact{
+    width: 80%;
+    padding: 20px;
+  }
+  .form input{
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  button{
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .contact{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 10px;
+  }
+  .contact p{
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .contact button{
+    width: 100%;
+    margin-top: 5px;
+  }
 }
